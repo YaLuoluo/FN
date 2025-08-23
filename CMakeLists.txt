@@ -30,18 +30,11 @@ set(USE_ZLIB OFF CACHE BOOL "Disable ZLIB" FORCE)
 FetchContent_MakeAvailable(IXWebSocket)
 target_link_libraries(FN PRIVATE ixwebsocket)
 
-
 FetchContent_Declare(
         cryptopp
-        GIT_REPOSITORY https://github.com/weidai11/cryptopp.git
+        GIT_REPOSITORY https://github.com/YaLuoluo/cryptopp.git
         GIT_TAG CRYPTOPP_8_9_0
 )
 FetchContent_MakeAvailable(cryptopp)
-file(GLOB PEM_FILES
-        "${CMAKE_CURRENT_SOURCE_DIR}/cryptopp-pem/*"
-)
-foreach(f ${PEM_FILES})
-    file(COPY ${f} DESTINATION ${cryptopp_SOURCE_DIR})
-endforeach()
 target_link_libraries(FN PRIVATE cryptopp)
 
