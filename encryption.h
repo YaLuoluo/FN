@@ -5,7 +5,6 @@
 #ifndef FN_ENCRYPTION_H
 #define FN_ENCRYPTION_H
 
-#include <iostream>
 #include "include/json.hpp"
 
 namespace encryption {
@@ -19,11 +18,12 @@ namespace encryption {
 
     std::string aes_decryption(const std::string &data, const std::string &key, const std::string &iv); //AES解密
 
+    std::string hmac_sha256(const std::string &data_str, const std::string &key_base64); // hmac_sha256
+
     std::string get_signature(const nlohmann::json &data, const std::string &key_base64); //签名
 
     nlohmann::json login_encrypt(const std::string &data, const std::string &pub, const std::string &key,
                                  const std::string &iv);
 };
-
 
 #endif //FN_ENCRYPTION_H
