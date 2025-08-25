@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.2)
 project(FN)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -14,7 +14,7 @@ add_executable(FN
         utils.cpp utils.h
         encryption.cpp encryption.h
 )
-target_include_directories(FN PUBLIC include)  # 头文件目录
+target_include_directories(FN PUBLIC ${PROJECT_SOURCE_DIR}/include) # 头文件目录
 
 # 链接 IXWebSocket 并，关闭 TLS 和压缩
 include(FetchContent)
