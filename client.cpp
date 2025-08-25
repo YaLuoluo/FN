@@ -49,7 +49,6 @@ void client::onWebSocketMessage(const ix::WebSocketMessagePtr &msg) {
             if (data["result"] == "succ" && data["reqid"] == getRSAPub_reqid) {
                 pub = data["pub"];
                 si = data["si"];
-                std::cout << "> 获取证书：" << '\n' << pub;
                 break;
             }
             if (data["reqid"] == login_reqid) {

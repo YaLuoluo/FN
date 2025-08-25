@@ -46,7 +46,6 @@ int main(int argc, char *argv[]) {
         std::cin >> password;
         saveConfig(serverAddr, username, password);
     }
-    std::cout << argc << std::endl;
     if (argc == 3) {
         port1 = std::stoi(argv[1]);
         port2 = std::stoi(argv[2]);
